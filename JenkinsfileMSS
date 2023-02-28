@@ -22,7 +22,7 @@ node('paytm-node'){
   def mavenHome=tool name: "mavenv3.1.1.1", type: "maven"
     
   stage('CheckouttheCode') {
-   git branch: 'master', credentialsId: '4d6512c4-c101-4f43-aac5-5860f5d9e20c', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'  
+   git branch: 'master', credentialsId: '4d6512c4-c101-4f43-aac5-5860f5d9e20c', url: 'https://github.com/sambit54321/maven-web-application.git'  
  }
   /*
    stage('Checkout'){
@@ -72,20 +72,16 @@ stage('DeploytoTomcat'){
 }
 */
  stage('EmailNotification'){
-    mail to: 'devopstrainingblr@gmail.com',
-         bcc: 'devopstrainingblr@gmail.com', 
-         cc: 'devopstrainingblr@gmail.com', 
-         from: 'devopstrainingblr@gmail.com', 
-         replyTo: 'devopstrainingblr@gmail.com', 
+    mail to: 'devopsambit@gmail.com',
+         bcc: 'devopssambit1@gmail.com', 
+         cc: 'devopssambit2@gmail.com', 
+         from: 'devopssambit3@gmail.com', 
+         replyTo: 'devops@gmail.com', 
          subject: 'Build Notification'
          body: '''Build Done, Please check the build log for more details..
          
                   Regards,
-                  Mithun Technologies,
-                  9980923226'''
- }
- 
- stage("SlackNotification"){
-     slackSend baseUrl: 'https://devops-team-bangalore.slack.com/services/hooks/jenkins-ci/', channel: 'build-notification', message: 'Build done through', tokenCredentialId: '12797dc5-eb70-4f19-8e05-8c07bc58d79d'
+                  sambit pradhan,
+                
  }
 }
